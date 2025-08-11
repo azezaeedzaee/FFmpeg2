@@ -11,5 +11,5 @@ WORKDIR /app
 # جعل السكربت قابل للتنفيذ
 RUN chmod +x /app/process-video.sh
 
-# عند التشغيل، نفذ السكربت
-CMD ["/app/process-video.sh"]
+# عند التشغيل، نفذ السكربت باستخدام bash
+CMD ["bash", "/app/process-video.sh"]
