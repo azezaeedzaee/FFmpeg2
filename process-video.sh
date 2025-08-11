@@ -1,7 +1,6 @@
 #!/bin/bash
-set -e  # إيقاف السكربت إذا حدث خطأ
+set -e
 
-# رابط الفيديو الأصلي
 INPUT_URL="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4"
 OUTPUT_FILE="output.mp4"
 TEMP_FILE="input.mp4"
@@ -14,7 +13,7 @@ fi
 
 echo "🎬 جاري تعديل الفيديو عبر FFmpeg..."
 if ! ffmpeg -hide_banner -loglevel error -i "$TEMP_FILE" \
-    -vf "drawbox=x=0:y=0:w=100:h=100:color=black@0.5:t=max" \
+    -vf "drawbox=x=0:y=0:w=100:h=100:color=black@0.5:t=fill" \
     -c:a copy "$OUTPUT_FILE"; then
     echo "❌ فشل تعديل الفيديو."
     exit 1
