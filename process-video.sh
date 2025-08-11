@@ -18,3 +18,4 @@ ffmpeg -i input.mp4 \
 
 # حفظ الناتج
 echo "✅ تم تعديل الفيديو وحفظه باسم output.mp4"
+ffmpeg -version
